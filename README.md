@@ -20,7 +20,6 @@ Download
 ========
 Required: Forge universal files for your minecraft version (http://files.minecraftforge.net/)
 The Forge files go into your minecraft jar.
-Tested with Forge 9.10.0.828
 
 Compatibility
 =============
