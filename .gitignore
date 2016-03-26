@@ -1,0 +1,9 @@
+/bin/
+/build/
+/config/
+/logs/
+/mods/
+/run/
+/saves/
+/usercache.json
+/usernamecache.json
