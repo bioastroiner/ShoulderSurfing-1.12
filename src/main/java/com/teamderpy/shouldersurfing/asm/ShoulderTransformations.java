@@ -55,8 +55,8 @@ public class ShoulderTransformations implements IClassTransformer
         obfStrings = new HashMap<String, String>();
         mcpStrings = new HashMap<String, String>();
 
-        registerMapping("EntityRendererClass",     "net.minecraft.client.renderer.EntityRenderer", "bng");
-        registerMapping("EntityRendererJavaClass", "net/minecraft/client/renderer/EntityRenderer", "bng");
+        registerMapping("EntityRendererClass",     "net.minecraft.client.renderer.EntityRenderer", "bnd");
+        registerMapping("EntityRendererJavaClass", "net/minecraft/client/renderer/EntityRenderer", "bnd");
         registerMapping("EntityLivingJavaClass",   "net/minecraft/entity/EntityLivingBase"       , "sa");
         registerMapping("EntityJavaClass",         "net/minecraft/entity/Entity"                 , "rr");
         registerMapping("orientCameraMethod",      "orientCamera"                                , "f");
@@ -69,8 +69,8 @@ public class ShoulderTransformations implements IClassTransformer
         registerMapping("ShoulderRenderBinJavaClass",   "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin" , "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin");
         
         registerMapping("renderWorldMethod",               "renderWorldPass"                                         , "a");
-        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "bqn");
-        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bqp");
+        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "bqk");
+        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bqm");
         registerMapping("clippingHelperGetInstanceMethod", "getInstance"                                             , "a");
      
     }

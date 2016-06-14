@@ -66,7 +66,7 @@ public class ShoulderEvents {
 				lastX = sr.getScaledWidth()*sr.getScaleFactor()/2;;
 				lastY = sr.getScaledHeight()*sr.getScaleFactor()/2;
 				
-				bind(Gui.icons);
+				bind(Gui.ICONS);
 				GL11.glEnable(GL11.GL_BLEND);
 				g.drawTexturedModalRect(sr.getScaledWidth()/2-7, 
 									    sr.getScaledHeight()/2-7, 
@@ -78,7 +78,7 @@ public class ShoulderEvents {
 			else if(ShoulderLoader.mc.gameSettings.thirdPersonView == 1){
 				if(ShoulderRenderBin.projectedVector != null){
 					GL11.glEnable(GL11.GL_BLEND);
-					bind(Gui.icons);
+					bind(Gui.ICONS);
 					if (ShoulderSettings.CROSSHAIR_COLOR_BOX_3RD)
 						enableCrosshairBoxColor();
 					float diffX = (ShoulderRenderBin.projectedVector.x - lastX) * tick;
@@ -93,7 +93,7 @@ public class ShoulderEvents {
 					
 
 				} else if(ShoulderSettings.TRACE_TO_HORIZON_LAST_RESORT){
-					bind(Gui.icons);
+					bind(Gui.ICONS);
 					GL11.glEnable(GL11.GL_BLEND);
 					/*
 					GL14.glBlendColor(1.0f, 0.2f, 0.2f, 1.0f);

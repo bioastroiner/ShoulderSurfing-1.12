@@ -36,7 +36,7 @@ version = "1.9-1.0"
 archivesBaseName = "ShoulderSurfing"
 
 minecraft {
-	version = "1.9-12.16.0.1809-1.9"
+	version = "1.9.4-12.17.0.1963"
     runDir = "run"
     mappings = "snapshot_20160312"
 

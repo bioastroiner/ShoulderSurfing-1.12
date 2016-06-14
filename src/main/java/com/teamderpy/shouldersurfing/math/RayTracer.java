@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.teamderpy.shouldersurfing.ShoulderLoader;
 import com.teamderpy.shouldersurfing.ShoulderSettings;
-import com.teamderpy.shouldersurfing.ShoulderSurfing;
 import com.teamderpy.shouldersurfing.renderer.ShoulderRenderBin;
 
 import net.minecraft.entity.Entity;
@@ -69,7 +68,7 @@ public final class RayTracer {
 							* playerReach, sightVector.yCoord * playerReach,
 							sightVector.zCoord * playerReach);
 
-					List entityList = ShoulderLoader.mc.theWorld
+					List<Entity> entityList = ShoulderLoader.mc.theWorld
 							.getEntitiesWithinAABBExcludingEntity(
 									ShoulderLoader.mc.getRenderViewEntity(),
 									ShoulderLoader.mc
