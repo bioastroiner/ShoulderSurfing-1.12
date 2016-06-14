@@ -1,7 +1,6 @@
 package com.teamderpy.shouldersurfing.asm;
 
 import java.util.Map;
-
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 /**

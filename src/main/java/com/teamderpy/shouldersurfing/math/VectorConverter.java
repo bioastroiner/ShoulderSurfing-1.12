@@ -10,6 +10,7 @@ import org.lwjgl.util.vector.Vector2f;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.util.math.Vec3d;
 
+
 /**
  * @author      Joshua Powers <jsh.powers@yahoo.com>
  * @version     1.0

@@ -1,4 +1,5 @@
 package com.teamderpy.shouldersurfing;
+import com.teamderpy.shouldersurfing.ShoulderSettings;
 
 public final class ShoulderCamera {
 	private ShoulderCamera(){}
@@ -11,7 +12,7 @@ public final class ShoulderCamera {
 	/**
 	 * How much the camera view distance should change
 	 */
-	public static float SHOULDER_ZOOM_MOD = 0.7F;
+	public static float SHOULDER_ZOOM_MOD = 0.70F;
 	
 	public static void adjustCameraLeft(){
 		if(ShoulderSettings.IS_ROTATION_UNLIMITED || SHOULDER_ZOOM_MOD < ShoulderSettings.ROTATION_MAXIMUM)

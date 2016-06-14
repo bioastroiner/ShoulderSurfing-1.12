@@ -1,7 +1,7 @@
 package com.teamderpy.shouldersurfing;
 
-import org.lwjgl.input.Keyboard;
 
+import org.lwjgl.input.Keyboard;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 //import cpw.mods.fml.client.registry.KeyBindingRegistry;
