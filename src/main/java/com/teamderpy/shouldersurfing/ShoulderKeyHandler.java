@@ -21,7 +21,6 @@ public class ShoulderKeyHandler {
 			if(ShoulderLoader.mc != null && ShoulderLoader.mc.currentScreen == null){
 				if (ShoulderLoader.mc.gameSettings.thirdPersonView == 1){
 					if(ShoulderKeybindings.KEYBIND_ROTATE_CAMERA_LEFT.isKeyDown()){
-						System.out.println("Key is pressed");
 						ShoulderCamera.adjustCameraLeft();
 					}
 					else if(ShoulderKeybindings.KEYBIND_ROTATE_CAMERA_RIGHT.isKeyDown()){
