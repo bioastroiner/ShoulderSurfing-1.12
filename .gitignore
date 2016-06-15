@@ -7,3 +7,6 @@
 /saves/
 /usercache.json
 /usernamecache.json
+build/*
+.gradle/*
+.project
