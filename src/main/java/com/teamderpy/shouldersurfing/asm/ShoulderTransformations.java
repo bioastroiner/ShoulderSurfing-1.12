@@ -47,7 +47,6 @@ public class ShoulderTransformations implements IClassTransformer
     
     public ShoulderTransformations()
     {
-    	System.out.println("Lo necesito");
         if(ShoulderSurfing.logger == null){
         	ShoulderSurfing.logger = LogManager.getLogger("ShoulderSurfing");
         }
