@@ -53,11 +53,11 @@ public class ShoulderTransformations implements IClassTransformer
     	
         obfStrings = new HashMap<String, String>();
         mcpStrings = new HashMap<String, String>();
-
-        registerMapping("EntityRendererClass",     "net.minecraft.client.renderer.EntityRenderer", "bnd");
-        registerMapping("EntityRendererJavaClass", "net/minecraft/client/renderer/EntityRenderer", "bnd");
-        registerMapping("EntityLivingJavaClass",   "net/minecraft/entity/EntityLivingBase"       , "sa");
-        registerMapping("EntityJavaClass",         "net/minecraft/entity/Entity"                 , "rr");
+        // UPDATED TO 1.10.2 Mappings
+        registerMapping("EntityRendererClass",     "net.minecraft.client.renderer.EntityRenderer", "bnz");
+        registerMapping("EntityRendererJavaClass", "net/minecraft/client/renderer/EntityRenderer", "bnz");
+        registerMapping("EntityLivingJavaClass",   "net/minecraft/entity/EntityLivingBase"       , "sf");
+        registerMapping("EntityJavaClass",         "net/minecraft/entity/Entity"                 , "rw");
         registerMapping("orientCameraMethod",      "orientCamera"                                , "f");
         registerMapping("rotationYawField",        "rotationYaw"                                 , "v");
         registerMapping("rotationPitchField",      "rotationPitch"                               , "w");
@@ -68,8 +68,8 @@ public class ShoulderTransformations implements IClassTransformer
         registerMapping("ShoulderRenderBinJavaClass",   "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin" , "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin");
         
         registerMapping("renderWorldMethod",               "renderWorldPass"                                         , "a");
-        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "bqk");
-        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bqm");
+        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "brg");
+        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bri");
         registerMapping("clippingHelperGetInstanceMethod", "getInstance"                                             , "a");
      
     }
