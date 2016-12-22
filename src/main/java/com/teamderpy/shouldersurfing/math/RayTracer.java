@@ -35,8 +35,8 @@ public final class RayTracer {
 								.getBlockReachDistance();
 					}
 
-					// block collision
-					RayTraceResult omo = ShoulderLoader.mc
+					// block AND Entity collision
+					RayTraceResult omo = ShoulderSettings.USE_VANILLA_RAYTRACE?ShoulderLoader.mc.objectMouseOver:ShoulderLoader.mc
 							.getRenderViewEntity().rayTrace(playerReach, tick);
 					double blockDist = 0;
 
@@ -59,62 +59,64 @@ public final class RayTracer {
 					}
 
 					// entity collision
-					Vec3d renderViewPos = ShoulderLoader.mc
-							.getRenderViewEntity().getLook(tick);
-
-					Vec3d sightVector = ShoulderLoader.mc.getRenderViewEntity()
-							.getLook(tick);
-					Vec3d sightRay = renderViewPos.addVector(sightVector.xCoord
-							* playerReach, sightVector.yCoord * playerReach,
-							sightVector.zCoord * playerReach);
-
-					List<Entity> entityList = ShoulderLoader.mc.theWorld
-							.getEntitiesWithinAABBExcludingEntity(
-									ShoulderLoader.mc.getRenderViewEntity(),
-									ShoulderLoader.mc
-											.getRenderViewEntity()
-											.getEntityBoundingBox()
-											.addCoord(
-													sightVector.xCoord
-															* playerReach,
-													sightVector.yCoord
-															* playerReach,
-													sightVector.zCoord
-															* playerReach)
-											.expand(1.0D, 1.0D, 1.0D));
-
-					for (int i = 0; i < entityList.size(); ++i) {
-						Entity ent = (Entity) entityList.get(i);
-
-						if (ent.canBeCollidedWith()) {
-							float collisionSize = ent.getCollisionBorderSize();
-							AxisAlignedBB aabb = ent.getEntityBoundingBox()
-									.expand((double) collisionSize,
-											(double) collisionSize,
-											(double) collisionSize);
-							RayTraceResult potentialIntercept = aabb
-									.calculateIntercept(renderViewPos, sightRay);
-
-							if (potentialIntercept != null) {
-								double entityDist = potentialIntercept.hitVec
-										.distanceTo(new Vec3d(
-												ShoulderLoader.mc
-														.getRenderViewEntity().posX,
-												ShoulderLoader.mc
-														.getRenderViewEntity().posY,
-												ShoulderLoader.mc
-														.getRenderViewEntity().posZ));
-
-								if (entityDist < blockDist) {
-									ShoulderRenderBin.rayTraceHit = potentialIntercept.hitVec;
-
-									// System.out.println("entity dist: " +
-									// entityDist);
-									if (entityDist <= (double) ShoulderLoader.mc.playerController
-											.getBlockReachDistance()) {
-										ShoulderRenderBin.rayTraceInReach = true;
-									} else {
-										ShoulderRenderBin.rayTraceInReach = false;
+					if(ShoulderSettings.USE_VANILLA_RAYTRACE){
+						Vec3d renderViewPos = ShoulderLoader.mc
+								.getRenderViewEntity().getLook(tick);
+	
+						Vec3d sightVector = ShoulderLoader.mc.getRenderViewEntity()
+								.getLook(tick);
+						Vec3d sightRay = renderViewPos.addVector(sightVector.xCoord
+								* playerReach, sightVector.yCoord * playerReach,
+								sightVector.zCoord * playerReach);
+	
+						List<Entity> entityList = ShoulderLoader.mc.theWorld
+								.getEntitiesWithinAABBExcludingEntity(
+										ShoulderLoader.mc.getRenderViewEntity(),
+										ShoulderLoader.mc
+												.getRenderViewEntity()
+												.getEntityBoundingBox()
+												.addCoord(
+														sightVector.xCoord
+																* playerReach,
+														sightVector.yCoord
+																* playerReach,
+														sightVector.zCoord
+																* playerReach)
+												.expand(1.0D, 1.0D, 1.0D));
+	
+						for (int i = 0; i < entityList.size(); ++i) {
+							Entity ent = (Entity) entityList.get(i);
+	
+							if (ent.canBeCollidedWith()) {
+								float collisionSize = ent.getCollisionBorderSize();
+								AxisAlignedBB aabb = ent.getEntityBoundingBox()
+										.expand((double) collisionSize,
+												(double) collisionSize,
+												(double) collisionSize);
+								RayTraceResult potentialIntercept = aabb
+										.calculateIntercept(renderViewPos, sightRay);
+	
+								if (potentialIntercept != null) {
+									double entityDist = potentialIntercept.hitVec
+											.distanceTo(new Vec3d(
+													ShoulderLoader.mc
+															.getRenderViewEntity().posX,
+													ShoulderLoader.mc
+															.getRenderViewEntity().posY,
+													ShoulderLoader.mc
+															.getRenderViewEntity().posZ));
+	
+									if (entityDist < blockDist) {
+										ShoulderRenderBin.rayTraceHit = potentialIntercept.hitVec;
+	
+										// System.out.println("entity dist: " +
+										// entityDist);
+										if (entityDist <= (double) ShoulderLoader.mc.playerController
+												.getBlockReachDistance()) {
+											ShoulderRenderBin.rayTraceInReach = true;
+										} else {
+											ShoulderRenderBin.rayTraceInReach = false;
+										}
 									}
 								}
 							}

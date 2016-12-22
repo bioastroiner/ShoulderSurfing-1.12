@@ -47,4 +47,5 @@ public class ShoulderSettings {
 	 * Whether or not you want color box on 3rd person crossahair.
 	 */
 	public static boolean CROSSHAIR_COLOR_BOX_3RD = false;
+	public static boolean USE_VANILLA_RAYTRACE = true;
 }

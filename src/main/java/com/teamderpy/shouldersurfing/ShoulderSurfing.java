@@ -115,7 +115,8 @@ public class ShoulderSurfing  {
 		ShoulderSettings.HIDE_PLAYER_IF_TOO_CLOSE_TO_CAMERA  = config.get(Configuration.CATEGORY_GENERAL, "keepCameraOutOfHead"    , ShoulderSettings.HIDE_PLAYER_IF_TOO_CLOSE_TO_CAMERA, "Whether or not to hide the player model if the camera gets too close to it").getBoolean(ShoulderSettings.HIDE_PLAYER_IF_TOO_CLOSE_TO_CAMERA);
 		ShoulderSettings.CROSSHAIR_COLOR_BOX_3RD  = config.get(Configuration.CATEGORY_GENERAL, "ThirdPersonCrosshairColor"    , ShoulderSettings.CROSSHAIR_COLOR_BOX_3RD, "Third person box color").getBoolean(ShoulderSettings.CROSSHAIR_COLOR_BOX_3RD);
 
-		
+		//Zorn Config
+		ShoulderSettings.USE_VANILLA_RAYTRACE = config.get(Configuration.CATEGORY_GENERAL, "VanillaRayTrace", ShoulderSettings.USE_VANILLA_RAYTRACE, "Use Vanilla MC Raytracing instead of ShoulderSurfing.  Target will be more accurate, but closer to face as it's set to your actual reach.").getBoolean(ShoulderSettings.USE_VANILLA_RAYTRACE);
     	
     	config.save();
     }
