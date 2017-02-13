@@ -7,7 +7,11 @@
 /saves/
 /usercache.json
 /usernamecache.json
+/eclipse/
 build/*
+gradle*
 .gradle/*
 .project
 .classpath
+.settings
+*.launch
