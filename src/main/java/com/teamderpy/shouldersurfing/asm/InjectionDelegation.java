@@ -43,9 +43,9 @@ public final class InjectionDelegation {
 	public static void calculateRayTraceProjection(){
         if(ShoulderRenderBin.rayTraceHit != null){
         	ShoulderRenderBin.projectedVector = com.teamderpy.shouldersurfing.math.VectorConverter.project2D(
-        			(float)(ShoulderRenderBin.rayTraceHit.xCoord), 
-        			(float)(ShoulderRenderBin.rayTraceHit.yCoord), 
-        			(float)(ShoulderRenderBin.rayTraceHit.zCoord));
+        			(float)(ShoulderRenderBin.rayTraceHit.x), 
+        			(float)(ShoulderRenderBin.rayTraceHit.y), 
+        			(float)(ShoulderRenderBin.rayTraceHit.z));
         	
         	ShoulderRenderBin.rayTraceHit = null;
         }

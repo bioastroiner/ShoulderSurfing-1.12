@@ -31,7 +31,7 @@ public class VectorConverter {
 	 * or null if the vector fails to be converted.
 	 */
 	public static Vector2f project2D(final Vec3d v3){
-		return project2D((float)v3.xCoord, (float)v3.yCoord, (float)v3.zCoord);
+		return project2D((float)v3.x, (float)v3.y, (float)v3.z);
 	}
 	
 	/**

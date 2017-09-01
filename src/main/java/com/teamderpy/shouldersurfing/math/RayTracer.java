@@ -24,7 +24,7 @@ public final class RayTracer {
 		ShoulderRenderBin.projectedVector = null;
 
 		if (ShoulderLoader.mc.getRenderViewEntity() != null) {
-			if (ShoulderLoader.mc.theWorld != null) {
+			if (ShoulderLoader.mc.world != null) {
 				if (ShoulderLoader.mc.gameSettings.thirdPersonView == 1) {
 					double playerReach = 1D;
 
@@ -65,24 +65,24 @@ public final class RayTracer {
 	
 						Vec3d sightVector = ShoulderLoader.mc.getRenderViewEntity()
 								.getLook(tick);
-						Vec3d sightRay = renderViewPos.addVector(sightVector.xCoord
-								* playerReach, sightVector.yCoord * playerReach,
-								sightVector.zCoord * playerReach);
+						Vec3d sightRay = renderViewPos.addVector(sightVector.x
+								* playerReach, sightVector.y * playerReach,
+								sightVector.z * playerReach);
 	
-						List<Entity> entityList = ShoulderLoader.mc.theWorld
+						List<Entity> entityList = ShoulderLoader.mc.world
 								.getEntitiesWithinAABBExcludingEntity(
 										ShoulderLoader.mc.getRenderViewEntity(),
 										ShoulderLoader.mc
 												.getRenderViewEntity()
 												.getEntityBoundingBox()
-												.addCoord(
-														sightVector.xCoord
+												.expand(
+														sightVector.x
 																* playerReach,
-														sightVector.yCoord
+														sightVector.y
 																* playerReach,
-														sightVector.zCoord
+														sightVector.z
 																* playerReach)
-												.expand(1.0D, 1.0D, 1.0D));
+												.grow(1.0D, 1.0D, 1.0D));
 	
 						for (int i = 0; i < entityList.size(); ++i) {
 							Entity ent = (Entity) entityList.get(i);

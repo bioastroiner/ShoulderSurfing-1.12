@@ -43,7 +43,6 @@ public class ShoulderSurfing  {
 	/**
 	 * Whether or not this mod is enabled
 	 */
-    @SuppressWarnings("unused")
 	private static boolean enabled = true;
     
 	/**

@@ -22,11 +22,11 @@ public class ShoulderTickHandler {
 			RayTracer.traceFromEyes(1.0F);
 			
 			if(ShoulderRenderBin.rayTraceHit != null){
-				if(ShoulderLoader.mc.thePlayer != null){
+				if(ShoulderLoader.mc.player != null){
 					//calculate the difference
-					double x = ShoulderLoader.mc.thePlayer.posX;
-					double y = ShoulderLoader.mc.thePlayer.posY;
-					double z = ShoulderLoader.mc.thePlayer.posZ;
+					double x = ShoulderLoader.mc.player.posX;
+					double y = ShoulderLoader.mc.player.posY;
+					double z = ShoulderLoader.mc.player.posZ;
 					ShoulderRenderBin.rayTraceHit = ShoulderRenderBin.rayTraceHit.addVector(-x,-y,-z);
 				}
 			}
