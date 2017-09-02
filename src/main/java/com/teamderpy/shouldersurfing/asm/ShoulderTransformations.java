@@ -68,8 +68,8 @@ public class ShoulderTransformations implements IClassTransformer
         registerMapping("ShoulderRenderBinJavaClass",   "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin" , "com/teamderpy/shouldersurfing/renderer/ShoulderRenderBin");
         
         registerMapping("renderWorldMethod",               "renderWorldPass"                                         , "a");
-        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "bxz");
-        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bxx");
+        registerMapping("clippingHelperImplJavaClass",     "net/minecraft/client/renderer/culling/ClippingHelperImpl", "bxx");
+        registerMapping("clippingHelperJavaClass",         "net/minecraft/client/renderer/culling/ClippingHelper"    , "bxz");
         registerMapping("clippingHelperGetInstanceMethod", "getInstance"                                             , "a");
      
     }
@@ -78,7 +78,7 @@ public class ShoulderTransformations implements IClassTransformer
     @Override
     public byte[] transform(String name, String transformedName, byte[] bytes)
     {
-    	ShoulderSurfing.logger.info("Found "+name+" ");
+    	//ShoulderSurfing.logger.info("Found "+name+" ");
     	//This lets us transform code whether or not it is obfuscated yet
         if (name.equals(obfStrings.get("EntityRendererClass")))
         {
